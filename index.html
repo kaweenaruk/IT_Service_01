@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เน็ตไลน์ ไอที - รับติดตั้งระบบไอที กล้องวงจรปิด และระบบ LAN</title>
+<meta name="description" content="รับติดตั้งระบบไอที กล้องวงจรปิด และระบบ LAN สำหรับบ้าน ร้านค้า และสำนักงาน">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --ink:#12223a; --muted:#51607a;
+  --blue:#1c5fc4; --yellow:#f5b800; --line:#d5dbe4;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0e1726; --surface:#16233a; --ink:#eef2f8; --muted:#a3b0c6; --blue:#6aa3ff; --line:#2a3b58; }
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Sarabun',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:18px}
+h1,h2,h3{font-family:'Prompt','Sarabun',sans-serif;line-height:1.3}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+header.top{border-bottom:1px solid var(--line);background:var(--surface);position:sticky;top:0;z-index:5}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:'Prompt',sans-serif;font-weight:700;font-size:1.15rem;text-decoration:none}
+.brand span{color:var(--blue)}
+nav a{margin-left:22px;text-decoration:none;color:var(--muted);font-weight:600}
+nav a:hover{color:var(--ink)}
+
+/* hero: patch-panel ports */
+.hero{padding:88px 0 72px}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:700;max-width:14em}
+.hero p{margin-top:20px;max-width:34em;color:var(--muted);font-size:1.15rem}
+.btn{display:inline-block;margin-top:32px;padding:14px 28px;background:var(--yellow);color:#12223a;font-family:'Prompt',sans-serif;font-weight:600;text-decoration:none;border-radius:6px}
+.btn:hover{filter:brightness(.95)}
+.ports{display:flex;gap:10px;margin-top:56px;flex-wrap:wrap}
+.port{width:44px;height:38px;border:2px solid var(--ink);border-radius:4px 4px 2px 2px;position:relative;background:var(--surface)}
+.port::after{content:"";position:absolute;left:8px;right:8px;bottom:-2px;height:10px;border:2px solid var(--ink);border-bottom:0;border-radius:2px 2px 0 0;background:var(--bg)}
+.port i{position:absolute;top:6px;left:6px;width:7px;height:7px;border-radius:50%;background:var(--line)}
+.port.on i{background:var(--blue)}
+.port.on.y i{background:var(--yellow)}
+
+section{padding:72px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:28px}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.about p+p{margin-top:16px}
+.facts{list-style:none;padding:0;border-left:4px solid var(--blue);padding-left:24px}
+.facts li{padding:10px 0}
+.facts b{font-family:'Prompt',sans-serif;font-size:1.3rem;display:block}
+
+.products{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.item{background:var(--surface);padding:32px;border-top:6px solid var(--blue)}
+.item:nth-child(2){border-top-color:var(--yellow)}
+.item h3{font-size:1.4rem;margin-bottom:10px}
+.item ul{margin-top:14px;padding-left:20px;color:var(--muted)}
+
+.contact{background:var(--ink);color:#fff;border-top:0}
+.contact h2{color:#fff}
+.contact p{color:#c4cee0}
+.phone{display:inline-block;margin-top:18px;font-family:'Prompt',sans-serif;font-weight:700;font-size:clamp(1.8rem,6vw,3rem);color:var(--yellow);text-decoration:none}
+footer{padding:24px 0;text-align:center;color:var(--muted);font-size:.9rem}
+
+@media (max-width:720px){
+  .about,.products{grid-template-columns:1fr}
+  nav a{margin-left:14px}
+  .hero{padding:56px 0 48px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">เน็ตไลน์<span> ไอที</span></a>
+    <nav aria-label="เมนูหลัก">
+      <a href="#about">ประวัติบริษัท</a>
+      <a href="#products">สินค้า</a>
+      <a href="#contact">ติดต่อ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <h1>รับติดตั้งระบบไอที ให้ใช้งานได้จริง</h1>
+      <p>ติดตั้งกล้องวงจรปิดและเดินสายระบบ LAN สำหรับบ้าน ร้านค้า และสำนักงาน ตั้งแต่ออกแบบจนส่งมอบงาน</p>
+      <a class="btn" href="#contact">ปรึกษาฟรี</a>
+      <div class="ports" aria-hidden="true">
+        <div class="port on"><i></i></div><div class="port on"><i></i></div>
+        <div class="port on y"><i></i></div><div class="port"><i></i></div>
+        <div class="port on"><i></i></div><div class="port on y"><i></i></div>
+        <div class="port"><i></i></div><div class="port on"><i></i></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>ประวัติบริษัท</h2>
+      <div class="about">
+        <div>
+          <p>เราเริ่มต้นจากทีมช่างขนาดเล็กที่รับเดินสายเครือข่ายและติดตั้งกล้องวงจรปิดให้ร้านค้าในชุมชน จากงานเล็ก ๆ ที่ลูกค้าแนะนำกันต่อ จนปัจจุบันเราดูแลระบบไอทีให้ทั้งบ้าน ร้านค้า โรงงาน และสำนักงาน</p>
+          <p>เราเน้นงานเรียบร้อย เดินสายเป็นระเบียบ ติดป้ายกำกับทุกจุด และสอนวิธีใช้งานก่อนส่งมอบ เพื่อให้ลูกค้าดูแลระบบต่อได้เอง</p>
+        </div>
+        <ul class="facts">
+          <li><b>ติดตั้งครบวงจร</b>สำรวจหน้างาน ออกแบบ ติดตั้ง และทดสอบ</li>
+          <li><b>ดูแลหลังการขาย</b>รับแจ้งซ่อมและตรวจเช็กระบบ</li>
+          <li><b>ราคาชัดเจน</b>เสนอราคาก่อนเริ่มงานทุกครั้ง</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <h2>สินค้าและบริการ</h2>
+      <div class="products">
+        <div class="item">
+          <h3>กล้องวงจรปิด</h3>
+          <p>ติดตั้งกล้องวงจรปิดพร้อมเครื่องบันทึก ดูภาพย้อนหลังและดูสดผ่านมือถือได้</p>
+          <ul>
+            <li>กล้องภายในและภายนอกอาคาร</li>
+            <li>เครื่องบันทึกภาพและฮาร์ดดิสก์</li>
+            <li>ตั้งค่าดูผ่านมือถือ</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>ระบบ LAN</h3>
+          <p>เดินสายและตั้งค่าเครือข่ายภายในอาคาร ให้อินเทอร์เน็ตเสถียรทั่วทั้งพื้นที่</p>
+          <ul>
+            <li>เดินสาย LAN และเข้าหัวสาย</li>
+            <li>ตู้แร็ค สวิตช์ และ Wi-Fi</li>
+            <li>ทดสอบและติดป้ายกำกับทุกจุด</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>ติดต่อ</h2>
+      <p>โทรสอบถามหรือนัดสำรวจหน้างานได้ทุกวัน</p>
+      <a class="phone" href="tel:0856957018">0856957018</a>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; 2026 เน็ตไลน์ ไอที สงวนลิขสิทธิ์</footer>
+
+</body>
+</html>
